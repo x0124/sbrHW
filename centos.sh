@@ -3,6 +3,7 @@ yum update -y
 yum install -y wget
 
 wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+
 rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 
 yum install -y epel-release java-11-openjdk-devel
