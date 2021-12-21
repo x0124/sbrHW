@@ -11,7 +11,7 @@ hosts = {
 	"ip"   => "192.168.207.101"
  },
   "sbrHW-VM2" => {
-	"box"  => "generic/rhel7",
+	"box"  => "centos/7",
 	"ip"   => "192.168.207.102"
   }
 }

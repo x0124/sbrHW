@@ -10,11 +10,14 @@ yum install -y jenkins
 systemctl daemon-reload
 
 
+systemctl enable jenkins
 systemctl start jenkins
 
-sed -i '/JENKINS_JAVA_OPTIONS=/s/"$/ -Djenkins.install.runSetupWizard=false"/' /etc/sysconfig/jenkins 
+cat /var/lib/jenkins/secrets/initialAdminPassword
 
-systemctl restart jenkins
+#sed -i '/JENKINS_JAVA_OPTIONS=/s/"$/ -Djenkins.install.runSetupWizard=false"/' /etc/sysconfig/jenkins 
+
+#systemctl restart jenkins
 
 # cat /var/lib/jenkins/secrets/initialAdminPassword
 

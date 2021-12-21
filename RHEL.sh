@@ -1,31 +1,27 @@
 yum update -y
 
+#yum install java-latest-openjdk.x86_64 -y --skip-broken
+
 # Устанавливаем реп epel и пакет htop
-rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-yum install -y htop
+sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm || true
+sudo yum install -y htop || true
 htop -v
 
 # Собираем libevent, от которого зависит tmux
-yum install -y gcc kernel-devel make ncurses-devel wget
-cd /tmp
-wget https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz
-tar -xvf libevent-2.1.12-stable.tar.gz
-cd libevent-2.1.12-stable
-./configure --prefix=/usr/local --disable-openssl
-make
-make install
-cd ..
-rm -rf libevent*
+sudo yum install -y gcc kernel-devel make ncurses-devel wget || true
+wget https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz -O /tmp/libevent
+tar -xvf /tmp/libevent -C /tmp
+cd /tmp/libevent-2.1.12-stable
+./configure --prefix=/usr/local --disable-openssl && make  || true
+sudo make install || true
+test -f /usr/local/lib/libevent.so
 
 # Собираем tmux
-wget https://github.com/tmux/tmux/releases/download/3.2a/tmux-3.2a.tar.gz
-tar -xvf tmux-3.2a.tar.gz
-cd tmux-3.2a
-LDFLAGS="-L/usr/local/lib -Wl,-rpath=/usr/local/lib" ./configure --prefix=/usr/local
-make
-make install
-cd ..
-rm -rf tmux*
+wget https://github.com/tmux/tmux/releases/download/3.2a/tmux-3.2a.tar.gz -O /tmp/tmux
+tar -xvf /tmp/tmux -C /tmp
+cd /tmp/tmux-3.2a
+LDFLAGS="-L/usr/local/lib -Wl,-rpath=/usr/local/lib" ./configure --prefix=/usr/local && make
+sudo make install
 /usr/local/bin/tmux -V
 
 # Скачиваем и устанавливаем бинарник jq
