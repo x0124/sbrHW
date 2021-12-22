@@ -1,0 +1,248 @@
+--- install Ansible ---
+Hit:1 http://us.archive.ubuntu.com/ubuntu focal InRelease
+Get:2 http://us.archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Get:3 http://us.archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu focal-updates/main i386 Packages [574 kB]
+Get:5 http://us.archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [1,400 kB]
+Get:6 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]
+Get:7 http://security.ubuntu.com/ubuntu focal-security/main i386 Packages [345 kB]
+Get:8 http://us.archive.ubuntu.com/ubuntu focal-updates/main Translation-en [283 kB]
+Get:9 http://us.archive.ubuntu.com/ubuntu focal-updates/main amd64 c-n-f Metadata [14.7 kB]
+Get:10 http://us.archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages [616 kB]
+Get:11 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [1,069 kB]
+Get:12 http://us.archive.ubuntu.com/ubuntu focal-updates/restricted Translation-en [88.1 kB]
+Get:13 http://us.archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [884 kB]
+Get:14 http://security.ubuntu.com/ubuntu focal-security/main Translation-en [197 kB]
+Get:15 http://security.ubuntu.com/ubuntu focal-security/main amd64 c-n-f Metadata [9,096 B]
+Get:16 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 Packages [566 kB]
+Get:17 http://us.archive.ubuntu.com/ubuntu focal-updates/universe i386 Packages [654 kB]
+Get:18 http://security.ubuntu.com/ubuntu focal-security/restricted Translation-en [80.9 kB]
+Get:19 http://security.ubuntu.com/ubuntu focal-security/universe i386 Packages [525 kB]
+Get:20 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages [668 kB]
+Get:21 http://us.archive.ubuntu.com/ubuntu focal-updates/universe Translation-en [193 kB]
+Get:22 http://us.archive.ubuntu.com/ubuntu focal-updates/universe amd64 c-n-f Metadata [19.9 kB]
+Get:23 http://us.archive.ubuntu.com/ubuntu focal-backports/main i386 Packages [34.5 kB]
+Get:24 http://us.archive.ubuntu.com/ubuntu focal-backports/main amd64 Packages [42.0 kB]
+Get:25 http://us.archive.ubuntu.com/ubuntu focal-backports/main Translation-en [10.0 kB]
+Get:26 http://us.archive.ubuntu.com/ubuntu focal-backports/main amd64 c-n-f Metadata [864 B]
+Get:27 http://us.archive.ubuntu.com/ubuntu focal-backports/universe amd64 Packages [18.9 kB]
+Get:28 http://us.archive.ubuntu.com/ubuntu focal-backports/universe i386 Packages [10.5 kB]
+Get:29 http://us.archive.ubuntu.com/ubuntu focal-backports/universe Translation-en [7,492 B]
+Get:30 http://us.archive.ubuntu.com/ubuntu focal-backports/universe amd64 c-n-f Metadata [636 B]
+Get:31 http://security.ubuntu.com/ubuntu focal-security/universe Translation-en [112 kB]
+Get:32 http://security.ubuntu.com/ubuntu focal-security/universe amd64 c-n-f Metadata [13.0 kB]
+Fetched 8,772 kB in 23s (383 kB/s)
+Reading package lists...
+Building dependency tree...
+Reading state information...
+15 packages can be upgraded. Run 'apt list --upgradable' to see them.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  ieee-data python3-argcomplete python3-crypto python3-distutils
+  python3-dnspython python3-jinja2 python3-jmespath python3-kerberos
+  python3-lib2to3 python3-libcloud python3-lockfile python3-markupsafe
+  python3-netaddr python3-ntlm-auth python3-requests-kerberos
+  python3-requests-ntlm python3-selinux python3-winrm python3-xmltodict
+Suggested packages:
+  cowsay sshpass python-jinja2-doc python-lockfile-doc ipython3
+  python-netaddr-docs
+The following NEW packages will be installed:
+  ansible ieee-data python3-argcomplete python3-crypto python3-distutils
+  python3-dnspython python3-jinja2 python3-jmespath python3-kerberos
+  python3-lib2to3 python3-libcloud python3-lockfile python3-markupsafe
+  python3-netaddr python3-ntlm-auth python3-requests-kerberos
+  python3-requests-ntlm python3-selinux python3-winrm python3-xmltodict
+0 upgraded, 20 newly installed, 0 to remove and 15 not upgraded.
+Need to get 9,971 kB of archives.
+After this operation, 92.8 MB of additional disk space will be used.
+Get:1 http://us.archive.ubuntu.com/ubuntu focal/main amd64 python3-markupsafe amd64 1.1.0-1build2 [13.9 kB]
+Get:2 http://us.archive.ubuntu.com/ubuntu focal/main amd64 python3-jinja2 all 2.10.1-2 [95.5 kB]
+Get:3 http://us.archive.ubuntu.com/ubuntu focal/main amd64 python3-crypto amd64 2.6.1-13ubuntu2 [237 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu focal-updates/main amd64 python3-lib2to3 all 3.8.10-0ubuntu1~20.04 [76.3 kB]
+Get:5 http://us.archive.ubuntu.com/ubuntu focal-updates/main amd64 python3-distutils all 3.8.10-0ubuntu1~20.04 [141 kB]
+Get:6 http://us.archive.ubuntu.com/ubuntu focal/main amd64 python3-dnspython all 1.16.0-1build1 [89.1 kB]
+Get:7 http://us.archive.ubuntu.com/ubuntu focal/main amd64 ieee-data all 20180805.1 [1,589 kB]
+Get:8 http://us.archive.ubuntu.com/ubuntu focal-updates/main amd64 python3-netaddr all 0.7.19-3ubuntu1 [236 kB]
+Get:9 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 ansible all 2.9.6+dfsg-1 [5,794 kB]
+Get:10 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 python3-argcomplete all 1.8.1-1.3ubuntu1 [27.2 kB]
+Get:11 http://us.archive.ubuntu.com/ubuntu focal-updates/main amd64 python3-jmespath all 0.9.4-2ubuntu1 [21.5 kB]
+Get:12 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 python3-kerberos amd64 1.1.14-3.1build1 [22.6 kB]
+Get:13 http://us.archive.ubuntu.com/ubuntu focal/main amd64 python3-lockfile all 1:0.12.2-2ubuntu2 [14.6 kB]
+Get:14 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 python3-libcloud all 2.8.0-1 [1,403 kB]
+Get:15 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 python3-ntlm-auth all 1.1.0-1 [19.6 kB]
+Get:16 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 python3-requests-kerberos all 0.12.0-2 [11.9 kB]
+Get:17 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 python3-requests-ntlm all 1.1.0-1 [6,004 B]
+Get:18 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 python3-selinux amd64 3.0-1build2 [139 kB]
+Get:19 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 python3-xmltodict all 0.12.0-1 [12.6 kB]
+Get:20 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 python3-winrm all 0.3.0-2 [21.7 kB]
+Fetched 9,971 kB in 38s (260 kB/s)
+Selecting previously unselected package python3-markupsafe.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 111159 files and directories currently installed.)
+Preparing to unpack .../00-python3-markupsafe_1.1.0-1build2_amd64.deb ...
+Unpacking python3-markupsafe (1.1.0-1build2) ...
+Selecting previously unselected package python3-jinja2.
+Preparing to unpack .../01-python3-jinja2_2.10.1-2_all.deb ...
+Unpacking python3-jinja2 (2.10.1-2) ...
+Selecting previously unselected package python3-crypto.
+Preparing to unpack .../02-python3-crypto_2.6.1-13ubuntu2_amd64.deb ...
+Unpacking python3-crypto (2.6.1-13ubuntu2) ...
+Selecting previously unselected package python3-lib2to3.
+Preparing to unpack .../03-python3-lib2to3_3.8.10-0ubuntu1~20.04_all.deb ...
+Unpacking python3-lib2to3 (3.8.10-0ubuntu1~20.04) ...
+Selecting previously unselected package python3-distutils.
+Preparing to unpack .../04-python3-distutils_3.8.10-0ubuntu1~20.04_all.deb ...
+Unpacking python3-distutils (3.8.10-0ubuntu1~20.04) ...
+Selecting previously unselected package python3-dnspython.
+Preparing to unpack .../05-python3-dnspython_1.16.0-1build1_all.deb ...
+Unpacking python3-dnspython (1.16.0-1build1) ...
+Selecting previously unselected package ieee-data.
+Preparing to unpack .../06-ieee-data_20180805.1_all.deb ...
+Unpacking ieee-data (20180805.1) ...
+Selecting previously unselected package python3-netaddr.
+Preparing to unpack .../07-python3-netaddr_0.7.19-3ubuntu1_all.deb ...
+Unpacking python3-netaddr (0.7.19-3ubuntu1) ...
+Selecting previously unselected package ansible.
+Preparing to unpack .../08-ansible_2.9.6+dfsg-1_all.deb ...
+Unpacking ansible (2.9.6+dfsg-1) ...
+Selecting previously unselected package python3-argcomplete.
+Preparing to unpack .../09-python3-argcomplete_1.8.1-1.3ubuntu1_all.deb ...
+Unpacking python3-argcomplete (1.8.1-1.3ubuntu1) ...
+Selecting previously unselected package python3-jmespath.
+Preparing to unpack .../10-python3-jmespath_0.9.4-2ubuntu1_all.deb ...
+Unpacking python3-jmespath (0.9.4-2ubuntu1) ...
+Selecting previously unselected package python3-kerberos.
+Preparing to unpack .../11-python3-kerberos_1.1.14-3.1build1_amd64.deb ...
+Unpacking python3-kerberos (1.1.14-3.1build1) ...
+Selecting previously unselected package python3-lockfile.
+Preparing to unpack .../12-python3-lockfile_1%3a0.12.2-2ubuntu2_all.deb ...
+Unpacking python3-lockfile (1:0.12.2-2ubuntu2) ...
+Selecting previously unselected package python3-libcloud.
+Preparing to unpack .../13-python3-libcloud_2.8.0-1_all.deb ...
+Unpacking python3-libcloud (2.8.0-1) ...
+Selecting previously unselected package python3-ntlm-auth.
+Preparing to unpack .../14-python3-ntlm-auth_1.1.0-1_all.deb ...
+Unpacking python3-ntlm-auth (1.1.0-1) ...
+Selecting previously unselected package python3-requests-kerberos.
+Preparing to unpack .../15-python3-requests-kerberos_0.12.0-2_all.deb ...
+Unpacking python3-requests-kerberos (0.12.0-2) ...
+Selecting previously unselected package python3-requests-ntlm.
+Preparing to unpack .../16-python3-requests-ntlm_1.1.0-1_all.deb ...
+Unpacking python3-requests-ntlm (1.1.0-1) ...
+Selecting previously unselected package python3-selinux.
+Preparing to unpack .../17-python3-selinux_3.0-1build2_amd64.deb ...
+Unpacking python3-selinux (3.0-1build2) ...
+Selecting previously unselected package python3-xmltodict.
+Preparing to unpack .../18-python3-xmltodict_0.12.0-1_all.deb ...
+Unpacking python3-xmltodict (0.12.0-1) ...
+Selecting previously unselected package python3-winrm.
+Preparing to unpack .../19-python3-winrm_0.3.0-2_all.deb ...
+Unpacking python3-winrm (0.3.0-2) ...
+Setting up python3-lockfile (1:0.12.2-2ubuntu2) ...
+Setting up python3-ntlm-auth (1.1.0-1) ...
+Setting up python3-kerberos (1.1.14-3.1build1) ...
+Setting up python3-markupsafe (1.1.0-1build2) ...
+Setting up python3-xmltodict (0.12.0-1) ...
+Setting up python3-jinja2 (2.10.1-2) ...
+Setting up python3-jmespath (0.9.4-2ubuntu1) ...
+Setting up python3-requests-kerberos (0.12.0-2) ...
+Setting up ieee-data (20180805.1) ...
+Setting up python3-dnspython (1.16.0-1build1) ...
+Setting up python3-selinux (3.0-1build2) ...
+Setting up python3-crypto (2.6.1-13ubuntu2) ...
+Setting up python3-argcomplete (1.8.1-1.3ubuntu1) ...
+Setting up python3-lib2to3 (3.8.10-0ubuntu1~20.04) ...
+Setting up python3-distutils (3.8.10-0ubuntu1~20.04) ...
+Setting up python3-requests-ntlm (1.1.0-1) ...
+Setting up python3-libcloud (2.8.0-1) ...
+Setting up python3-netaddr (0.7.19-3ubuntu1) ...
+Setting up python3-winrm (0.3.0-2) ...
+Setting up ansible (2.9.6+dfsg-1) ...
+Processing triggers for man-db (2.9.1-1) ...
+ansible 2.9.6
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = ['/home/vagrant/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3/dist-packages/ansible
+  executable location = /usr/bin/ansible
+  python version = 3.8.10 (default, Sep 28 2021, 16:10:42) [GCC 9.3.0]
+--- setup roles ---
+total 9
+drwxrwxrwx 1 vagrant vagrant    0 Dec 19 16:50 .
+drwxrwxrwx 1 vagrant vagrant 4096 Dec 22 20:13 ..
+-rwxrwxrwx 1 vagrant vagrant 1702 Dec 19 15:42 vagrant.key
+-rwxrwxrwx 1 vagrant vagrant  388 Dec 19 15:42 vagrant.pub
+--- play infrastructure playbook ---
+
+PLAY [sbrHW-VM2] ****************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************
+ok: [sbrHW-VM2]
+
+TASK [java : install java-11-openjdk-devel] *************************************************************************************************
+changed: [sbrHW-VM2]
+
+PLAY [sbrHW-VM1] ****************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************
+ok: [sbrHW-VM1]
+
+TASK [java : install java-11-openjdk-devel] *************************************************************************************************
+changed: [sbrHW-VM1]
+
+TASK [jenkins : download Jenkins repo] ******************************************************************************************************
+changed: [sbrHW-VM1]
+
+TASK [jenkins : import jenkins key] *********************************************************************************************************
+changed: [sbrHW-VM1]
+
+TASK [jenkins : install epel] ***************************************************************************************************************
+changed: [sbrHW-VM1]
+
+TASK [jenkins : install jenkins] ************************************************************************************************************
+changed: [sbrHW-VM1]
+
+TASK [jenkins : start jenkins] **************************************************************************************************************
+changed: [sbrHW-VM1]
+
+TASK [install  wget] ************************************************************************************************************************
+changed: [sbrHW-VM1]
+
+PLAY RECAP **********************************************************************************************************************************
+sbrHW-VM1                  : ok=8    changed=7    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+sbrHW-VM2                  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+--- play task playbook ---
+
+PLAY [sbrHW-VM1] ****************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************
+ok: [sbrHW-VM1]
+
+TASK [copy files to sbrHW-VM1] **************************************************************************************************************
+changed: [sbrHW-VM1] => (item={'src': '~/src/jenkins/credentials.vagrant.xml', 'dest': '/home/vagrant/credentials.vagrant.xml', 'mode': '0444'})
+changed: [sbrHW-VM1] => (item={'src': '~/src/jenkins/node.sbrHW-VM2.xml', 'dest': '/home/vagrant/node.sbrHW-VM2.xml', 'mode': '0444'})
+changed: [sbrHW-VM1] => (item={'src': '~/src/jenkins/job.sbrHW-VM2.xml', 'dest': '/home/vagrant/job.sbrHW-VM2.xml', 'mode': '0444'})
+changed: [sbrHW-VM1] => (item={'src': '~/src/jenkins/doJenkins.sh', 'dest': '/home/vagrant/doJenkins.sh', 'mode': '0555'})
+
+TASK [run doJenkins.sh] *********************************************************************************************************************
+changed: [sbrHW-VM1]
+
+TASK [fetch doJenkins.log] ******************************************************************************************************************
+changed: [sbrHW-VM1]
+
+TASK [fetch job.sbrHW-VM2.log] **************************************************************************************************************
+changed: [sbrHW-VM1]
+
+PLAY [sbrHW-VM2] ****************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************
+ok: [sbrHW-VM2]
+
+TASK [fetch sshd_conf from sbrHW-VM2] *******************************************************************************************************
+changed: [sbrHW-VM2]
+
+PLAY RECAP **********************************************************************************************************************************
+sbrHW-VM1                  : ok=5    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+sbrHW-VM2                  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

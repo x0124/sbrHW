@@ -1,0 +1,33 @@
+
+PLAY [sbrHW-VM1] ****************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************
+ok: [sbrHW-VM1]
+
+TASK [copy files to sbrHW-VM1] **************************************************************************************************************
+changed: [sbrHW-VM1] => (item={'src': '~/src/jenkins/credentials.vagrant.xml', 'dest': '/home/vagrant/credentials.vagrant.xml', 'mode': '0444'})
+changed: [sbrHW-VM1] => (item={'src': '~/src/jenkins/node.sbrHW-VM2.xml', 'dest': '/home/vagrant/node.sbrHW-VM2.xml', 'mode': '0444'})
+changed: [sbrHW-VM1] => (item={'src': '~/src/jenkins/job.sbrHW-VM2.xml', 'dest': '/home/vagrant/job.sbrHW-VM2.xml', 'mode': '0444'})
+changed: [sbrHW-VM1] => (item={'src': '~/src/jenkins/doJenkins.sh', 'dest': '/home/vagrant/doJenkins.sh', 'mode': '0555'})
+
+TASK [run doJenkins.sh] *********************************************************************************************************************
+changed: [sbrHW-VM1]
+
+TASK [fetch doJenkins.log] ******************************************************************************************************************
+changed: [sbrHW-VM1]
+
+TASK [fetch job.sbrHW-VM2.log] **************************************************************************************************************
+changed: [sbrHW-VM1]
+
+PLAY [sbrHW-VM2] ****************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************
+ok: [sbrHW-VM2]
+
+TASK [fetch sshd_conf from sbrHW-VM2] *******************************************************************************************************
+changed: [sbrHW-VM2]
+
+PLAY RECAP **********************************************************************************************************************************
+sbrHW-VM1                  : ok=5    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+sbrHW-VM2                  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

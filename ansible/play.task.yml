@@ -1,0 +1,41 @@
+--- 
+- hosts: sbrHW-VM1
+  tasks:
+  - name: copy files to sbrHW-VM1
+    copy: 
+      src: "{{ item.src }}"
+      dest: "{{ item.dest }}"
+      mode: "{{ item.mode }}"
+    with_items:
+    - { src: '~/src/jenkins/credentials.vagrant.xml',dest: '/home/vagrant/credentials.vagrant.xml', mode: '0444'}
+    - { src: '~/src/jenkins/node.sbrHW-VM2.xml',dest: '/home/vagrant/node.sbrHW-VM2.xml', mode: '0444'}
+    - { src: '~/src/jenkins/job.sbrHW-VM2.xml',dest: '/home/vagrant/job.sbrHW-VM2.xml', mode: '0444'}
+    - { src: '~/src/jenkins/doJenkins.sh',dest: '/home/vagrant/doJenkins.sh', mode: '0555'}
+
+  - name: run doJenkins.sh
+    shell: /home/vagrant/doJenkins.sh > doJenkins.log
+
+  - name: fetch doJenkins.log 
+    fetch:
+      src: /home/vagrant/doJenkins.log
+      dest: /home/vagrant/src/log/doJenkins.log
+      flat: yes
+      fail_on_missing: yes
+
+  - name: fetch job.sbrHW-VM2.log 
+    fetch:
+      src: /home/vagrant/job.sbrHW-VM2.log
+      dest: /home/vagrant/src/log/job.sbrHW-VM2.log
+      flat: yes
+      fail_on_missing: yes
+
+
+- hosts: sbrHW-VM2
+  become: true
+  tasks:
+  - name: fetch sshd_conf from sbrHW-VM2
+    fetch:
+      src: /etc/ssh/sshd_config
+      dest: /home/vagrant/src/log/sshd_config
+      flat: yes
+      fail_on_missing: yes
