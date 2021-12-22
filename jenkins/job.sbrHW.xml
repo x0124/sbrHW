@@ -1,0 +1,69 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.scm.NullSCM"/>
+  <assignedNode>sbrHW-VM2</assignedNode>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>sudo yum update -y< || true/command>
+      <configuredLocalRules/>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>echo &quot;--- install epel repo and htop package ---&quot;
+sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm || true
+sudo yum install -y htop || true
+htop -v</command>
+      <configuredLocalRules/>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>echo &quot;--- get and build libevent as a tmux dependency ---&quot;
+sudo yum install -y gcc kernel-devel make ncurses-devel wget || true
+wget https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz -O /tmp/libevent || true
+tar -xvf /tmp/libevent -C /tmp
+cd /tmp/libevent-2.1.12-stable
+./configure --prefix=/usr/local --disable-openssl &amp;&amp; make  || true
+sudo make install || true
+test -f /usr/local/lib/libevent.so</command>
+      <configuredLocalRules/>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>echo &quot;--- build tmux ---&quot;
+wget https://github.com/tmux/tmux/releases/download/3.2a/tmux-3.2a.tar.gz -O /tmp/tmux || true
+tar -xvf /tmp/tmux -C /tmp || true
+cd /tmp/tmux-3.2a || true
+LDFLAGS=&quot;-L/usr/local/lib -Wl,-rpath=/usr/local/lib&quot; ./configure --prefix=/usr/local &amp;&amp; make || true
+sudo make install || true
+tmux -V</command>
+      <configuredLocalRules/>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>echo &quot;--- get jq binary ---&quot;
+sudo wget -O /usr/bin/jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 || true
+sudo chmod +x /usr/bin/jq || true
+jq -V</command>
+      <configuredLocalRules/>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>echo &quot;--- change sshd_config ---&quot;
+sudo sed -i &quot;/PermitRootLogin/s/^/#Defined at EOF. /; /PubkeyAuthentication/s/^/#Defined at EOF. /; /PasswordAuthentication/s/^/#Defined at EOF. /&quot; /etc/ssh/sshd_config
+sudo sh -c &quot;echo -e \&quot;\nPermitRootLogin no\nPubkeyAuthentication yes\nPasswordAuthentication no\&quot; &gt;&gt; /etc/ssh/sshd_config&quot;</command>
+      <configuredLocalRules/>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>echo &quot;--- restart sshd ---&quot;
+sudo service sshd restart</command>
+      <configuredLocalRules/>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>

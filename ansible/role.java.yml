@@ -1,0 +1,8 @@
+--- 
+- name: install java-11-openjdk-devel 
+  yum: 
+    name: java-11-openjdk-devel 
+    state: present 
+  when: 
+    ansible_os_family == "RedHat" 
+

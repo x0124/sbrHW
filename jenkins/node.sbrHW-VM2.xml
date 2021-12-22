@@ -1,0 +1,20 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<slave>
+  <name>sbrHW-VM2</name>
+  <description></description>
+  <remoteFS>/home/vagrant</remoteFS>
+  <numExecutors>1</numExecutors>
+  <mode>NORMAL</mode>
+  <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
+  <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.33.0">
+    <host>192.168.207.102</host>
+    <port>22</port>
+    <credentialsId>54a45656-6b42-418b-9cdb-c439c6ca5afc</credentialsId>
+    <launchTimeoutSeconds>60</launchTimeoutSeconds>
+    <maxNumRetries>100</maxNumRetries>
+    <retryWaitTime>5</retryWaitTime>
+    <sshHostKeyVerificationStrategy class="hudson.plugins.sshslaves.verifiers.NonVerifyingKeyVerificationStrategy"/>
+    <tcpNoDelay>true</tcpNoDelay>
+  </launcher>
+  <label></label>
+  <nodeProperties/>

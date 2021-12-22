@@ -1,0 +1,8 @@
+[homework] 
+sbrHW-VM1 ansible_host=192.168.207.101 
+sbrHW-VM2 ansible_host=192.168.207.102 
+
+[homework:vars] 
+ansible_ssh_private_key_file=~/.ssh/vagrant.key 
+ansible_python_interpreter=/usr/bin/python2.7 
+
